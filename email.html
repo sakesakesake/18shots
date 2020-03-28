@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>SAKE</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="website about sake">
+            <link href="stylesheet.css" rel="stylesheet">
+            <script src="moderizr.custom.05819.js"></script>
+        </head>
+        <body>
+            <div class="wrapper">
+                 <header>
+                    <h1>What is SAKE?</h1>
+                 </header>
+                 <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="history.html">HISTORY</a></li>
+                        <li><a href="howtodrink.html">DRINK</a></li>
+                        <li><a href="contact.html">PURCHASE</a></li>
+                        <li><a href="security.html">About Security</a></li>
+                        <li><a href="email.html">Contact</a></li>
+                    </ul>
+                    
+                 </nav>
+                 <main>
+                    <field>
+                        <legend>CONTACT</legend>
+                        <form>
+                            <label for="name">Full name:</label>
+                            <input type="text" id="name" name="name" required ><br>
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required><br>
+                            <label for="reason">Type of Contents</label>
+                        <select id="reason" name="reason">
+                            <option value="0">--------</option>
+                            <option value="1">About products</option>
+                            <option value="2">About purchase</option>
+                            <option value="3">About us</option>
+                            <option value="4">Others</option>
+                        </select><br>
+                            <textarea  id="contents" name="contents" rows="15" cols="50" required>
+                            </textarea><br>
+                            <input type="submit" id = "submit" value="Submit" onclick="fillValidate()">
+                          </form>
+                          <div id="errormsg"></div>
+                    </field>
+                 </main>
+            </div>
+            <footer>
+                Copyright&copy;2020 HonamiSasahara
+            </footer>
+            <script>
+                function fillValidate(){
+                    var reason= document.getElementById("reason").value;
+                    if (reason === "0"){
+                        document.getElementById("submit").addEventListener("submit",function(evt){
+                            evt.preventDefault();
+                        })
+                        alert("Please choose the type of content")
+                    }
+                }
+                document.getElementsById("submit").createEventListener("click",fillValidate(),false)
+
+            </script>
+        </body>
+    </html>
